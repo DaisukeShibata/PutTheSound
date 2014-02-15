@@ -12,6 +12,7 @@
 #import "PTSMusicDataModel.h"
 #import "PTSRecommendArtworkView.h"
 #import "UIImage+ImageEffects.h"
+#import "PTSBlueToothManager.h"
 
 @interface PTSViewController ()
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
@@ -19,11 +20,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIView *toolView;
-
 @property (nonatomic) MPMusicPlayerController *player;
 @property (nonatomic) BOOL isPlaying;
 @property (nonatomic) NSInteger playingAlbumIndex;
 
+@property (weak, nonatomic) PTSBlueToothManager *blueToothManager;
 @property (weak, nonatomic) PTSMusicDataModel *dataModel;
 
 @end
@@ -36,6 +37,10 @@
 	// Do any additional setup after loading the view.
     self.playingAlbumIndex = -1;
     self.dataModel = [PTSMusicDataModel sharedManager];
+    
+    self.blueToothManager = [PTSBlueToothManager sharedManager];
+    [self.blueToothManager setupManagerWithDelegate:self];
+    
     
     self.carousel.dataSource = self;
     self.carousel.delegate = self;
@@ -180,10 +185,12 @@
 /***************************************************/
 - (IBAction)rightSwipeHandler:(id)sender {
     [self.player skipToPreviousItem];
+    [self updateConnectionAdvertise];
     [self p_updateLabel];
 }
 - (IBAction)leftSwipeHander:(id)sender {
     [self.player skipToNextItem];
+    [self updateConnectionAdvertise];
     [self p_updateLabel];
 }
 
@@ -237,5 +244,19 @@
     }
 }
 
+- (void) updateConnectionAdvertise
+{
+    if(_isPlaying){
+        MPMediaItem *song = [self.player nowPlayingItem];
+        NSDictionary *songDic = @{@"ID":[song valueForProperty: MPMediaItemPropertyPersistentID],
+                                  @"TITLE":[song valueForProperty: MPMediaItemPropertyTitle],
+                                  @"ARTIST":[song valueForProperty: MPMediaItemPropertyArtist],
+                                  @"ALUBUMTITLE":[song valueForProperty: MPMediaItemPropertyAlbumTitle],
+                                  @"ARTWORK":[song valueForProperty: MPMediaItemPropertyArtwork]};
+        
+        [self.blueToothManager startAdvertising:songDic];
+        
+    }
+}
 
 @end
