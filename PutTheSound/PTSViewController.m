@@ -12,6 +12,7 @@
 #import "PTSMusicDataModel.h"
 #import "PTSRecommendArtworkView.h"
 #import "UIImage+ImageEffects.h"
+#import "PTSBeaconManeger.h"
 
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
@@ -27,6 +28,7 @@
 @property (nonatomic) BOOL isPlaying;
 @property (nonatomic) NSInteger playingAlbumIndex;
 
+@property (weak, nonatomic) PTSBeaconManeger *beaconManager;
 @property (weak, nonatomic) PTSMusicDataModel *dataModel;
 
 @property (nonatomic) UIView *getView;
@@ -44,6 +46,9 @@
 	// Do any additional setup after loading the view.
     self.playingAlbumIndex = -1;
     self.dataModel = [PTSMusicDataModel sharedManager];
+    
+    self.beaconManager = [PTSBeaconManeger sharedManager];
+    [self.beaconManager setupManagerWithDelegate:self];
     
     self.carousel.dataSource = self;
     self.carousel.delegate = self;
@@ -216,6 +221,8 @@
         if (finished) {
             [self.player skipToPreviousItem];
             [self p_updateLabel];
+            [self updateConnectionAdvertise];
+
         }
     }];
     
@@ -238,6 +245,7 @@
         if (finished) {
             [self.player skipToNextItem];
             [self p_updateLabel];
+            [self updateConnectionAdvertise];
         }
     }];
 }
@@ -276,7 +284,21 @@
 /***************************************************/
 #pragma mark - PrivateMethods
 /***************************************************/
-
+- (void) updateConnectionAdvertise
+{
+    if(_isPlaying){
+        MPMediaItem *song = [self.player nowPlayingItem];
+        NSDictionary *songDic = @{@"ID":[song valueForProperty: MPMediaItemPropertyPersistentID],
+                                  @"TITLE":[song valueForProperty: MPMediaItemPropertyTitle],
+                                  @"ARTIST":[song valueForProperty: MPMediaItemPropertyArtist],
+                                  @"ALUBUMTITLE":[song valueForProperty: MPMediaItemPropertyAlbumTitle],
+                                  @"ARTWORK":[song valueForProperty: MPMediaItemPropertyArtwork]};
+        
+        NSString *trackID = songDic[@"ID"];
+        [self.beaconManager startAdvertising:[trackID doubleValue]];
+        
+    }
+}
 - (void)p_setUpButton {
     if(_isPlaying){
         [self.player pause];

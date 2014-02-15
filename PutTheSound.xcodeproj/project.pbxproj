@@ -17,6 +17,8 @@
 		41AE376718AF51C1008277CB /* PTSMusicDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE376618AF51C1008277CB /* PTSMusicDataModel.m */; };
 		41AE378A18AF7566008277CB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE378918AF7566008277CB /* UIImage+ImageEffects.m */; };
 		50B83DAF02EB4268B9912154 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD9E847C314E028B0C1ACC /* libPods.a */; };
+		7E6394A518B024AA0062C54B /* PTSBeaconManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6394A418B024AA0062C54B /* PTSBeaconManeger.m */; };
+		7E6394A718B0261F0062C54B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6394A618B0261F0062C54B /* CoreBluetooth.framework */; };
 		8F6858C118AE216C0056D91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6858C018AE216C0056D91D /* Foundation.framework */; };
 		8F6858C318AE216C0056D91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6858C218AE216C0056D91D /* CoreGraphics.framework */; };
 		8F6858C518AE216C0056D91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6858C418AE216C0056D91D /* UIKit.framework */; };
@@ -71,6 +73,9 @@
 		41AE376618AF51C1008277CB /* PTSMusicDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSMusicDataModel.m; sourceTree = "<group>"; };
 		41AE378818AF7566008277CB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		41AE378918AF7566008277CB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		7E6394A318B024AA0062C54B /* PTSBeaconManeger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSBeaconManeger.h; sourceTree = "<group>"; };
+		7E6394A418B024AA0062C54B /* PTSBeaconManeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSBeaconManeger.m; sourceTree = "<group>"; };
+		7E6394A618B0261F0062C54B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8F6858BD18AE216C0056D91D /* PutTheSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PutTheSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6858C018AE216C0056D91D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F6858C218AE216C0056D91D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E6394A718B0261F0062C54B /* CoreBluetooth.framework in Frameworks */,
 				41AE376318AF44E7008277CB /* QuartzCore.framework in Frameworks */,
 				410568E518AE800C00CDBFEF /* CoreLocation.framework in Frameworks */,
 				8F6858F618AE217E0056D91D /* AVFoundation.framework in Frameworks */,
@@ -189,6 +195,7 @@
 		8F6858BF18AE216C0056D91D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E6394A618B0261F0062C54B /* CoreBluetooth.framework */,
 				41AE376218AF44E7008277CB /* QuartzCore.framework */,
 				410568E418AE800C00CDBFEF /* CoreLocation.framework */,
 				8F6858F518AE217D0056D91D /* AVFoundation.framework */,
@@ -204,6 +211,8 @@
 		8F6858C618AE216C0056D91D /* PutTheSound */ = {
 			isa = PBXGroup;
 			children = (
+				7E6394A318B024AA0062C54B /* PTSBeaconManeger.h */,
+				7E6394A418B024AA0062C54B /* PTSBeaconManeger.m */,
 				8F8EC62F18AFFA3A000D265E /* CrossingMusicTable */,
 				41AE376418AF50FF008277CB /* Model */,
 				41AE375E18AF2F32008277CB /* SlideController */,
@@ -495,6 +504,7 @@
 				8F8EC63218AFFAA9000D265E /* PTSCrossingMusicViewController.m in Sources */,
 				8F68590718AE3BA40056D91D /* SCOUtilImageView.m in Sources */,
 				8F68590318AE29850056D91D /* UIColor+Hex.m in Sources */,
+				7E6394A518B024AA0062C54B /* PTSBeaconManeger.m in Sources */,
 				8F6858FC18AE272D0056D91D /* PTSPlayListViewController.m in Sources */,
 				8F6858D118AE216D0056D91D /* PTSAppDelegate.m in Sources */,
 				8F6858CD18AE216D0056D91D /* main.m in Sources */,
