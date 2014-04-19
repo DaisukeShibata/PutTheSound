@@ -23,9 +23,11 @@
 @interface PTSViewController ()
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIView *toolView;
+@property (weak, nonatomic) IBOutlet UIButton *crossingButton;
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -56,6 +58,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    if(rect.size.height == 480){
+        CGRect viewRect = self.infoView.frame;
+        viewRect.size.height = 184.0f;
+        _infoView.frame = viewRect;
+        CGRect buttonRect = _crossingButton.frame;
+        buttonRect.origin.y = 133.0f;
+        _crossingButton.frame = buttonRect;
+    }
+    
     self.formatter = [[NSDateFormatter alloc] init];
     [self.formatter setDateFormat:@"mm:ss"];
     

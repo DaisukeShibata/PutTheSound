@@ -32,6 +32,10 @@ static CGFloat const RefreshTimelineSec = 60.0f;
                                                  name:@"stopTimer"
                                                object:nil];
     
+    CGRect rect = _tableView.frame;
+    rect.size.height = self.view.frame.size.height - 20.0f;
+    _tableView.frame = rect;
+    
     [[PTSTimelineManager sharedManager] setDelegate:self];
     [self reloadAsync];
 }

@@ -35,6 +35,9 @@
 	// Do any additional setup after loading the view.
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
+    CGRect rect = _tableView.frame;
+    rect.size.height = self.view.frame.size.height - 20.0f;
+    _tableView.frame = rect;
     
     [self p_indicatorShow:YES];
 }
