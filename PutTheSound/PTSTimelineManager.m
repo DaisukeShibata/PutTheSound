@@ -56,6 +56,8 @@ static NSString *const requestURL = @"http://www1415uo.sakura.ne.jp/music/GetTim
                                            
                                            [parsedDic setObject:[self stationLabelText:dic] forKey:@"text"];
                                            [parsedDic setObject:dic[@"type"] forKey:@"type"];
+                                           [parsedDic setObject:dic[@"title"] forKey:@"title"];
+                                           [parsedDic setObject:dic[@"artist"] forKey:@"artist"];
                                            
                                            NSDate* date = [NSDate dateWithTimeIntervalSince1970:[dic[@"time"] doubleValue]];
                                            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

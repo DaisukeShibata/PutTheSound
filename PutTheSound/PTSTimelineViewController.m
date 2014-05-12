@@ -8,6 +8,7 @@
 
 #import "PTSTimelineViewController.h"
 #import "PTSSlideViewController.h"
+#import "PTSMapViewController.h"
 
 static CGFloat const RefreshTimelineSec = 60.0f;
 @interface PTSTimelineViewController ()
@@ -15,6 +16,7 @@ static CGFloat const RefreshTimelineSec = 60.0f;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *timeLineItem;
 @property (nonatomic) NSTimer *timer;
+@property (nonatomic) NSDictionary *selectedDic;
 @end
 
 @implementation PTSTimelineViewController
@@ -136,6 +138,10 @@ static CGFloat const RefreshTimelineSec = 60.0f;
         static NSString *CellIdentifier = @"GetCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
+        UIView *backView = [[UIView alloc] initWithFrame:cell.frame];
+        backView.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f];
+        cell.selectedBackgroundView = backView;
+        
         UILabel *stationLabel = (UILabel*)[cell viewWithTag:1];
         stationLabel.attributedText = _timeLineItem[indexPath.row][@"text"];
         
@@ -155,6 +161,10 @@ static CGFloat const RefreshTimelineSec = 60.0f;
         
         static NSString *CellIdentifier = @"PutCell";
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        UIView *backView = [[UIView alloc] initWithFrame:cell.frame];
+        
+        backView.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.3f];
+        cell.selectedBackgroundView = backView;
 
         UILabel *stationLabel = (UILabel*)[cell viewWithTag:1];
         stationLabel.attributedText = _timeLineItem[indexPath.row][@"text"];
@@ -180,6 +190,23 @@ static CGFloat const RefreshTimelineSec = 60.0f;
         [dateLabel setClipsToBounds:YES];
         
         return cell;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedDic = _timeLineItem[indexPath.row];
+    if (_selectedDic[@"latitude"] != nil && _selectedDic[@"longitude"] != nil) {
+        [self performSegueWithIdentifier:@"ToMapViewController" sender:self];
+    }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ToMapViewController"]) {
+        PTSMapViewController *vc = segue.destinationViewController;
+        vc.infoDic = _selectedDic;
     }
 }
 

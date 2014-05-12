@@ -22,6 +22,12 @@
 		50B83DAF02EB4268B9912154 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD9E847C314E028B0C1ACC /* libPods.a */; };
 		7E2F0FBF18D5ED5E00595CEA /* PTSTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F0FBE18D5ED5E00595CEA /* PTSTimelineViewController.m */; };
 		7E2F0FC518D5FA3600595CEA /* PTSTimelineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F0FC418D5FA3600595CEA /* PTSTimelineManager.m */; };
+		7E719C79190B809B00DA0605 /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E719C78190B809B00DA0605 /* YMapKit.framework */; };
+		7E719C7B190B810700DA0605 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E719C7A190B810600DA0605 /* SystemConfiguration.framework */; };
+		7E719C7D190B812E00DA0605 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E719C7C190B812E00DA0605 /* OpenGLES.framework */; };
+		7E719C7F190B815000DA0605 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E719C7E190B815000DA0605 /* libxml2.2.dylib */; };
+		7E719CAE190B838600DA0605 /* PTSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E719CAD190B838600DA0605 /* PTSMapViewController.m */; };
+		7E719CB2190B8BB200DA0605 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E719CB1190B8BB200DA0605 /* MyAnnotation.m */; };
 		8F6858C118AE216C0056D91D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6858C018AE216C0056D91D /* Foundation.framework */; };
 		8F6858C318AE216C0056D91D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6858C218AE216C0056D91D /* CoreGraphics.framework */; };
 		8F6858C518AE216C0056D91D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6858C418AE216C0056D91D /* UIKit.framework */; };
@@ -89,6 +95,14 @@
 		7E2F0FBE18D5ED5E00595CEA /* PTSTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSTimelineViewController.m; sourceTree = "<group>"; };
 		7E2F0FC318D5FA3600595CEA /* PTSTimelineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSTimelineManager.h; sourceTree = "<group>"; };
 		7E2F0FC418D5FA3600595CEA /* PTSTimelineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSTimelineManager.m; sourceTree = "<group>"; };
+		7E719C78190B809B00DA0605 /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
+		7E719C7A190B810600DA0605 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7E719C7C190B812E00DA0605 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7E719C7E190B815000DA0605 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		7E719CAC190B838600DA0605 /* PTSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSMapViewController.h; sourceTree = "<group>"; };
+		7E719CAD190B838600DA0605 /* PTSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSMapViewController.m; sourceTree = "<group>"; };
+		7E719CB0190B8BB200DA0605 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		7E719CB1190B8BB200DA0605 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		8F6858BD18AE216C0056D91D /* PutTheSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PutTheSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6858C018AE216C0056D91D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F6858C218AE216C0056D91D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E719C7F190B815000DA0605 /* libxml2.2.dylib in Frameworks */,
+				7E719C7D190B812E00DA0605 /* OpenGLES.framework in Frameworks */,
+				7E719C7B190B810700DA0605 /* SystemConfiguration.framework in Frameworks */,
 				8FB34E0618B3AB8B00659BFC /* CoreBluetooth.framework in Frameworks */,
 				41AE376318AF44E7008277CB /* QuartzCore.framework in Frameworks */,
 				410568E518AE800C00CDBFEF /* CoreLocation.framework in Frameworks */,
@@ -148,6 +165,7 @@
 				8FEF674418B640B4003C2A23 /* AudioToolbox.framework in Frameworks */,
 				8F6858C518AE216C0056D91D /* UIKit.framework in Frameworks */,
 				8F6858C118AE216C0056D91D /* Foundation.framework in Frameworks */,
+				7E719C79190B809B00DA0605 /* YMapKit.framework in Frameworks */,
 				50B83DAF02EB4268B9912154 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +247,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		7E719CAF190B8B7A00DA0605 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7E719CAC190B838600DA0605 /* PTSMapViewController.h */,
+				7E719CAD190B838600DA0605 /* PTSMapViewController.m */,
+				7E719CB0190B8BB200DA0605 /* MyAnnotation.h */,
+				7E719CB1190B8BB200DA0605 /* MyAnnotation.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		8F6858B418AE216C0056D91D = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +281,10 @@
 		8F6858BF18AE216C0056D91D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E719C7E190B815000DA0605 /* libxml2.2.dylib */,
+				7E719C7C190B812E00DA0605 /* OpenGLES.framework */,
+				7E719C7A190B810600DA0605 /* SystemConfiguration.framework */,
+				7E719C78190B809B00DA0605 /* YMapKit.framework */,
 				8FEF674318B640B4003C2A23 /* AudioToolbox.framework */,
 				8FB34E0518B3AB8B00659BFC /* CoreBluetooth.framework */,
 				41AE376218AF44E7008277CB /* QuartzCore.framework */,
@@ -280,6 +313,7 @@
 				8F6858FF18AE27510056D91D /* MusicControlView */,
 				8F6858FE18AE27450056D91D /* PlayListView */,
 				7E2F0FC018D5F9BC00595CEA /* TimeLineView */,
+				7E719CAF190B8B7A00DA0605 /* Map */,
 				8F6858FD18AE27330056D91D /* RecommenView */,
 				8F6858CF18AE216D0056D91D /* PTSAppDelegate.h */,
 				8F6858D018AE216D0056D91D /* PTSAppDelegate.m */,
@@ -578,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				410568E818AE84CF00CDBFEF /* PTSRecommendCFViewController.m in Sources */,
+				7E719CB2190B8BB200DA0605 /* MyAnnotation.m in Sources */,
 				8F6858D718AE216D0056D91D /* PTSViewController.m in Sources */,
 				41AE378A18AF7566008277CB /* UIImage+ImageEffects.m in Sources */,
 				8FEF674718B640F4003C2A23 /* CentralManager.m in Sources */,
@@ -598,6 +633,7 @@
 				410568EC18AE8ECA00CDBFEF /* PTSRecommendArtworkView.m in Sources */,
 				8FEF673B18B4FAC4003C2A23 /* PTSPeripheralManager.m in Sources */,
 				8F8EC62E18AFE43A000D265E /* PTSMusicStationAPIManager.m in Sources */,
+				7E719CAE190B838600DA0605 /* PTSMapViewController.m in Sources */,
 				41AE376118AF2F70008277CB /* PTSSlideViewController.m in Sources */,
 				410568E318AE7FC900CDBFEF /* StationManager.m in Sources */,
 			);
@@ -730,6 +766,10 @@
 				CODE_SIGN_ENTITLEMENTS = PutTheSound/PutTheSound.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PutTheSound/PutTheSound-Prefix.pch";
 				INFOPLIST_FILE = "PutTheSound/PutTheSound-Info.plist";
@@ -748,6 +788,10 @@
 				CODE_SIGN_ENTITLEMENTS = PutTheSound/PutTheSound.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PutTheSound/PutTheSound-Prefix.pch";
 				INFOPLIST_FILE = "PutTheSound/PutTheSound-Info.plist";
